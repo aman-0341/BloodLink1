@@ -5,16 +5,17 @@ const mongoose = require('mongoose');
 const cookieParser = require("cookie-parser");
 
 const app = express();
-const port = 3177;
 
 dotenv.config();
+const port = process.env.PORT;
+
 
 app.use(cookieParser());
 app.use(express.json());
 app.use(
 	cors({
 		origin: [
-			"http://localhost:3000",
+			"https://bloodlink1-frontend1.onrender.com",
 		],
 		credentials: true,
 	})
